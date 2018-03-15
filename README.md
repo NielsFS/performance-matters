@@ -49,9 +49,21 @@ zie de resultaten hier:
 
 ## Feature/3-Image-Optimalisatie
 
+Na de fonts en de critical css te hebben verbeterd is de first paint op een enorm goed niveau. Echter heeft dit nog niet geresulteerd in het verbeteren van de algehele laadtijd van de pagina. Die staat nogsteeds op 31 seconden. De beste en eerste optimizatie voor het verbeteren van de laadtijd is het comprimeren van de foto's. Deze heb ik verkleind doormiddel van een online tool genaamd optimizilla: http://optimizilla.com/nl/
 
+![Optimizilla images](https://lh3.googleusercontent.com/kagafzSXdjdG_Dpmko5VJ_s8EEakbE0mO9KA1BG6JAtCgXEwKgEmoFv7M8FC7E5SGYO5Tnxaftqw_PsQroDkVdDgoT_Aj2n7N2D8-epmFw-vFl-QQWI1KF9O7nDEi5ejVKe-rlekGyuqzLOGe8jYWnmwdP7QEgpXYtvhoAh_Hupuq1-cflILLNdLBmpEuSuG0g88bm_ru9Yk5BGxYxmvFrPHHiVq-9p8LMe6iT6iaordHxMtp7YntdcA0OMmwDemMr2zwMjLTDu60lvuOqOBhb9shlfhTph8SCNG9VVpj5LOMVeskOUZdfKLpUm9tMXGeNa86_8Lxfato3SubUVFbDetrvT0aWo2Hl9y-IfA0eoCLzWW-PkV-6ame8sdep3WzjXHq3GiaVKdCttucKwmyglrqE7NXtkm1mBzVJVEfbG4I4o-Iy4ayBoRZoW1zUZgUxfkHdMr57Sq2JkuhE0xoU2uUZfZm2hQ-DMLqnQKtNuUvBJF60Fn2ppNsFxJNvVFksv-dV5OZ4Rm_BhveW4oxDCy5LFUVguS_WBogZ6HeSW1m92JAgIfEiep2q4WltaboQfDOsCAIIY-e5nCv9tFxwrWrwkSRqoZNOP-MkA=w1864-h548-no)
+
+De foto's heb ik vervolgens vervangen. Zie de resultaten hier:
+
+![Feature 3](https://lh3.googleusercontent.com/FSgkJHwYJCkwzwa3toqJhwhSTBeDiDjQgMBbR_XXUmtwrc3q4e-5JF6isarUPHB5toCG9gdphVNK_OvWqFdP_BQx_VHjgq7zAhcPi7xuuAF3NZJWAAxDnmZtR_CY_3yRN49K0pkZlb1AvZqshQe3mEF32tC-ZZYEEXW5VyklPKnJyZMQV74lCyFiyEfUnphZybaTxOZ_1CPbw0Se8O_5lUbEj1D4T4rvmBHI2u_jFKszl85WEHO8ZnJa3GyfU4L2138B-wA0vXizysivzyc7zoVIDTVWcmoSTOtGtGj5vXXu0Gt9CX7zaQ_yj9w2k2YCxliKRtOhrxZmqGX7DfF3vudoGVoQZGriM6pUlqX7rD6e14CoTIfNVytLmPE6FlumkL6mlJK9FQ1ailV1Kd7eEm_2j-G0iXtMAvODjg3_rdSksnDqh0hhpzaUEQYC2L0Xo5ms3maGemf42Yms2mQDq3-LW13lCUiksleANM-oQpXGVLhP9Wrm4t7BrcoYMjZIpQwqwbY5VkOmg7p-edH7EERSrVmR4of528DTn27ngvNfGMvpWAqAOCO2W7sk8EhLyIrrclpkXgTLpubB1KfCt0LgYVW-iIZGRkRisXQ=w1648-h1556-no)
+
+De laadtijd van de pagina is met 8 seconden verbeterd naar ongeveer 23 seconden
 
 ## Feature/4-Asynchroon-laden-van-assets
+
+
+
+
 
 
 
