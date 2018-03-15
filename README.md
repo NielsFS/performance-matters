@@ -41,9 +41,26 @@ Vervolgens wordt de css in de layout.html pagina bovenin de head ingeladen. De b
 
 ## Feature/2-font-loading
 
+De 3,45 seconden laadtijd tot en met first paint kan nog enorm verkleint worden door de fonts pas nadat alles is ingeladen te swappen. Door de Fonts uit de critical css te halen, en font swap toe te voegen aan het fonts.css bestand worden de custom fonts pas later ingeladen. Dit zorgt voor een enorme verbetering in de first paint. Die is nu 373 ms. 
 
+zie de resultaten hier:
+
+![Feature 2](https://lh3.googleusercontent.com/x200Vi5j34S6iMQCXcR3v0YtIEp9dqrwZGgbMaFbBnBBNBEeYkmjge-_4Z7Wu11hFqTvgZeqdSrwqR13koFDN51IMS8_ifW9jkp7UjFBeC0JqCpFTydDgqISKVjtibrjoKo6wDjNkAzdqF-sVAVznPvARJEplfMwEvNh7h_k-z7TfaESxAfsDHa0FWE8s34WLWAwy-HchU1BeSCa2y7u8B3WoMwoK_8esBEgtW-8S3t0e_vD8TT-bSRwbAZRiC_Jyr-Aq9VeUMuKUVdLrt_s1_W9rq8vLK1d3ckSE9Ay6IJKsVn06fxYRkopDZ3V3mRyKx7YCZJDmICP2-QX0jw5Qr3Chw_S93ilY-WJrwH-7tAvDGIZ9z9xNV3Z99uteTHViOwDBcEzgJsv6rVD6qG27uzfUAIIiRDLEMyBmIyhFc1D8XYc3odyGkZh1YmXyJIR-HGCrY4x0z9XpdyHLU5btxsDP5fVFjmRGgsubzXtAHs7YRko3qE6RPUUqCnwDNCqJIaOu46U_3MTSqq7PPvmmi8GIjxus3poQTPMuoFYKawbilltw5Kbk8waeSjuhK9zppoZG2g5iMTx_x6JZbn0w3-N9HTCcYLHDg6tDw=w1600-h1560-no)
 
 ## Feature/3-Image-Optimalisatie
 
 
+
 ## Feature/4-Asynchroon-laden-van-assets
+
+
+
+
+
+
+
+
+
+
+
+
