@@ -61,7 +61,45 @@ De laadtijd van de pagina is met 8 seconden verbeterd naar ongeveer 23 seconden
 
 ## Feature/4-Asynchroon-laden-van-assets
 
+Het asynchroon laden van de assets werd gedaan door de critical css pakket van www.npmjs.com . Deze was dus al aanwezig bij alle features. Ik heb twee tests uitgevoerd met het aan en uitzetten van het asynchroon inladen van assets. dit heb ik gedaan door de het volgende script en de css linkn files terug te zetten naar het origineel.
 
+origineel: 
+
+	<link href="/dist/css/fonts.css" rel="stylesheet">
+    <link href="/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/css/src/docs.css" rel="stylesheet">
+
+Dit leverde de volgende resultaten op:
+
+![feature 4 origineel](https://lh3.googleusercontent.com/wy19T4rvVcCj-vtDCVMhI-gz68iHH3qyYqkmLRxJg3eaUR0Fz7C0qER3GJOH4nlt0iyIRd5II-AkIK1qRXLTjhjx6okS6KyN6YP6qVzSuFZVqFVo5CpJolBeamOZFEG7pOMZ83fGT9Oxd9YSfwjv13V4CtVQKCVLmvisT9z9tDiJHxRZLdFPysOq1NAyc8BE8dhAIvAhasEa0bEEX3JRBYryBwLeqnKN54NYUspQ9hHpKWv1Sjbqg-D36_iokrWyQX1l_0ty4aXkZZ6fJ7sAOSKoh2Jb66bkKLryofNHS5CU1DQTe-ZTlDSsMrlI88MMEUlGchvCFKIhhAw5-mbgasZQYOSmZByFfH6DQ0FvHwR8k6KnD5eqUO7HnGnkSs01mNSsXiVMtPlypbgvB4ZUtQbzZ1Bm01Ag1OdJq4E71d6u8mlC1tDfzlzaEDTkDEklCuN5E04H-_TL69tT6Au40iSRwJ_2H_QwczzR3TY5kBvXSR_sV0r0ZaYK5oid4N3Ouu34Boix1UZUT4MNbQToKJRrYaUaACiDIqCF9BWJbMTb6njvuKyb4hJnHiO6_euwOW-KK5sBAuplbYljIsIj9Ub8VSpbjfqsQf_ow9E=w1648-h1558-no)
+
+Zoals te zien wordt de totale laadtijd niet veranderd. Echter zie je wel dat de first paint stukken trager is, die is er namelijk na 7 seconden pas.
+
+Door de originele link tags en het het script toe te voegen wordt de first paint stukken enorm snel. Dit komt doordat de assets pas ingeladen worden nadat de critical css is uitgevoerd.
+
+link:
+
+	<link href="dist/css/fonts.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="dist/css/fonts.css" rel="stylesheet"></noscript>
+    <link href="dist/css/bootstrap.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="dist/css/bootstrap.css" rel="stylesheet"></noscript>
+    <link href="assets/css/src/docs.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="assets/css/src/docs.css" rel="stylesheet"></noscript>
+
+script:
+
+	<script>!function(n){"use strict";n.loadCSS||(n.loadCSS=function(){});var o=loadCSS.relpreload={};if(o.support=function(){var e;try{e=n.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),o.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},o.poly=function(){if(!o.support())for(var t=n.document.getElementsByTagName("link"),e=0;e<t.length;e++){var a=t[e];"preload"!==a.rel||"style"!==a.getAttribute("as")||a.getAttribute("data-loadcss")||(a.setAttribute("data-loadcss",!0),o.bindMediaToggle(a))}},!o.support()){o.poly();var t=n.setInterval(o.poly,500);n.addEventListener?n.addEventListener("load",function(){o.poly(),n.clearInterval(t)}):n.attachEvent&&n.attachEvent("onload",function(){o.poly(),n.clearInterval(t)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:n.loadCSS=loadCSS}("undefined"!=typeof global?global:this);</script>
+
+
+resulteert in:
+
+![feature 4](https://lh3.googleusercontent.com/-zz1P_rpVid3ZXkxc1-Rn9Wu6zsP2wRuw4sRs_9AnX8nnSYkYkHd8u-usEtw7_zMQ75e5lCdhRTk3bp5b7tlGAOf4PPHgEvRumj25FnhpkPCTEvs-zO2exwMlrbE6MvOscjaNNk7ahXOsF7x4diZ7UTnPvRwSFoQgnddvuN91JQgCsJPW9NCvWVYWhmRnagGRUWs099E-KLbOeigFUdIue-FZeX6NI6QyEdJp_xIqKfsxU3wAPht3AezZ9F8IJ5buQ4xWNvwkkyDOIrIYnGh71H7x-45Bps7aGPIBzhqf4K3UiDDpN6BcsQSEIkiiF4TGyufVb77NYnBwdfi7hHkBR4Ln94U8G9eVzYTb5kiIjwh0bLsYKaInCBQxFulNFVYEThZO9QkUO4_QMou0JEkSthKkXQPgJlYuDnIfoEEAIQEG0lQLioWSwxnXsL8-KfMifWW1U8NdVaI7cIvcXUndZN65Fe2_Qa_nk6BuuOCzgfXypfrQI1Qc9Z2GZ_yX9lte6iijQRJjkx7YWkGsjbIx4k5mz_WORMenYnjcCUHQ0JuAIwLRC5h52eBeuR8-P3un81SPPQpaAOiC3a_Mqc46oOBl9PIBqVZM4hnykc=w1652-h1504-no)
+
+## Toekomstige feature
+
+Waar ik nu nog niet aan toe ben gekomen is het minifieën van de css assets. Dat zal in een snellere laadtijd resulteren. 
+
+Ook zou ik de foto's naar betere formaten kunnen omzetten. Hoe meer de foto's gecomprimeerd kunnen worden hoe beter de laadtijd zal zijn.
 
 
 
